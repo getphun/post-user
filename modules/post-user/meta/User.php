@@ -37,7 +37,7 @@ class User
                 'description'   => $meta_desc,
                 'keywords'      => $meta_keys,
                 'image'         => $meta_image,
-                'type'          => 'profile'
+                'type'          => 'website'
             ]
         ];
         
@@ -48,9 +48,15 @@ class User
         // user schema
         $schema = [
             '@context'      => 'http://schema.org',
-            '@type'         => 'Person',
+            '@type'         => 'CollectionPage',
             'name'          => $user->fullname,
             'description'   => $meta_desc,
+            'publisher'     => [
+                '@type'         => 'Organization',
+                'name'          => $dis->config->name,
+                'url'           => $base_url,
+                'logo'          => $meta_image
+            ],
             'url'           => $meta_url,
             'image'         => $meta_image
         ];
