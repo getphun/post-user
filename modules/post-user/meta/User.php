@@ -51,12 +51,7 @@ class User
             '@type'         => 'CollectionPage',
             'name'          => $user->fullname,
             'description'   => $meta_desc,
-            'publisher'     => [
-                '@type'         => 'Organization',
-                'name'          => $dis->config->name,
-                'url'           => $base_url,
-                'logo'          => $meta_image
-            ],
+            'publisher'     => $dis->meta->schemaOrganization(),
             'url'           => $meta_url,
             'image'         => $meta_image
         ];
