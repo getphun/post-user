@@ -15,7 +15,7 @@ class User
         
         $base_url = $dis->router->to('siteHome');
         
-        $meta_desc  = '';
+        $meta_desc  = 'All post and or news provided by '.$user->fullname;
         $meta_image = $base_url . 'theme/site/static/logo/500x500.png';
         $meta_url   = $user->page;
         $meta_title = $user->fullname;
